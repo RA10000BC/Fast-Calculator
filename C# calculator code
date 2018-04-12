@@ -1,0 +1,82 @@
+static double Pow(double x, double y=2)
+        {
+            double result = 1;
+            for (double i = 0; i < y; i++) { result *= x; }
+            return result;
+        }
+        static double Cub(double x, double y=3)
+        {
+            double result = 1;
+            for (double i = 0; i < y; i++) { result *= x; }
+            return result;
+        }
+        static double Mult(double x, double y) { return x * y; }
+        static double ADD(double x, double y) { return x + y; }
+        static double Div(double x, double y) { return x / y; }
+        static double Sub(double x, double y) { return x - y; }
+
+        static void Main(string[] args)
+        {
+            do
+            {
+                Console.WriteLine("Type of opperation :mult,add,div,sub,pow,cube //or esc to exit");
+
+                string opp = Console.ReadLine();
+
+                if (opp == "mult")
+                {
+                    Console.WriteLine("First number:");
+                    double x = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Second number:");
+                    double y = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Answer:{0}", Mult(x, y));
+                }
+                else if (opp == "add")
+                {
+                    Console.WriteLine("First number:");
+                    double x = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Second number:");
+                    double y = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Answer:{0}", ADD(x, y));
+                }
+                else if (opp == "div")
+                {
+                    Console.WriteLine("First number:");
+                    double x = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Second number:");
+                    double y = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Answer:{0}", Div(x, y));
+                }
+                else if (opp == "sub")
+                {
+                    Console.WriteLine("First number:");
+                    double x = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Second number:");
+                    double y = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Answer:{0}", Sub(x, y));
+                }
+                else if (opp=="pow")
+                {
+                    Console.WriteLine("Number to square:");
+                    double x = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Result:{0}", Pow(x));
+                }
+                else if (opp=="cube")
+                {
+                    Console.WriteLine("Number to cube:");
+                    double x = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Result:{0}", Cub(x));
+                }
+                else if (opp == "esc")
+                {
+                    Console.WriteLine("Goodbye"); break;
+                }
+                else
+                {
+                    Console.WriteLine("Something went wrong");
+                }
+
+
+            }
+            while (true);
+        }
